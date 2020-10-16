@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    objectFit: 'contain'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -66,8 +67,9 @@ function RecipeReviewCard() {
       /> */}
       <CardMedia
         className={classes.media}
-        image= "client/src/img/toilet.jpg"
+        // src = {toilet}
         title="toilet"
+        image = {toilet}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -75,12 +77,12 @@ function RecipeReviewCard() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
+        </IconButton> */}
+        {/* <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>
+        </IconButton> */}
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

@@ -17,7 +17,7 @@ class Dashboard extends Component {
 
     return (
       <>
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div style={{ height: "25vh" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">
               <h4>
@@ -26,12 +26,19 @@ class Dashboard extends Component {
                   You are logged into Allowance Builder!
               </p>
               </h4>
-              <button
+
+            </div>
+          </div>
+        </div>
+        <Album />
+        <div className="col s12 center-align">
+        <button
                 style={{
                   width: "150px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
-                  marginTop: "1rem"
+                  marginTop: "1rem",
+                  marginBottom: "1rem"
                 }}
 
                 onClick={this.onLogoutClick}
@@ -40,10 +47,6 @@ class Dashboard extends Component {
                 Logout
             </button>
             </div>
-          </div>
-        </div>
-        <Album />
-        
       </>
     );
   }
