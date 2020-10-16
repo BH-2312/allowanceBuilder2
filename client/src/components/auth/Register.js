@@ -4,6 +4,12 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import Radio from '@material-ui/core/Radio'
+
 class Register extends Component {
   constructor() {
     super();
@@ -12,32 +18,51 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      parentOrKid: "parent",
       errors: {}
     };
+    this.onChange = this.onChange.bind(this)
   }
-componentWillReceiveProps(nextProps) {
+
+  componentDidMount() {
+    // If logged in and user navigates to Register page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
       });
     }
   }
-onChange = e => {
+
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+
+  handleChange = e => {
+    this.setState({parentOrKid:e.target.value})
+  };
+
+  onSubmit = e => {
     e.preventDefault();
-const newUser = {
+    const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      parentOrKid: this.state.parentOrKid
     };
-this.props.registerUser(newUser, this.props.history); 
+    console.log(newUser);
+    this.props.registerUser(newUser, this.props.history);
   };
-render() {
+
+  render() {
     const { errors } = this.state;
-return (
+    return (
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -54,6 +79,13 @@ return (
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Parent or Kid?</FormLabel>
+                <RadioGroup aria-label="parentOrKid" name="parentOrKid" value={this.state.parentOrKid} onChange={this.handleChange} row>
+                  <FormControlLabel value="parent" control={<Radio />} label="Parent" />
+                  <FormControlLabel value="kid" control={<Radio />} label="Kid" />
+                </RadioGroup>
+              </FormControl>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
