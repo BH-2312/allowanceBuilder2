@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
 import { List, ListItem } from "../List";
 import { Input, FormBtn } from "../Form";
+// import Job from "../../../../models/job";
 
 function AddJob() {
   // Setting our component's initial state
@@ -86,7 +87,7 @@ function AddJob() {
                   <ListItem key={job._id}>
                     <Link to={"/jobs/" + job._id}>
                       <strong>
-                        {jobs.job} for {jobs.price}
+                        {job.job} for ${job.price}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteJob(job._id)} />

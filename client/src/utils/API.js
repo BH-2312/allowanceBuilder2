@@ -17,6 +17,7 @@ export default {
   // Saves a job to the database
   saveJob: function(jobData) {
     console.log(jobData)
+    console.log("post is working")
     return axios.post("/api/jobRoutes/jobs", jobData);
   }
 };
