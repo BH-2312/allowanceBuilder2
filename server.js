@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const app = express();
 const passport = require("passport");
 
-const users = require("./routes/api/users");
+const users = require("./routes/api/userRoutes/users");
+const jobs = require("./routes/api/jobRoutes/jobs");
+
 
 // Bodyparser middleware
 app.use(
@@ -29,11 +31,17 @@ mongoose
   // Passport middleware
 app.use(passport.initialize());
 
+// // Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
+
 // Passport config
 require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users", users);
+app.use("/api/userRoutes/users", users);
+app.use("/api/jobRoutes/jobs", jobs)
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 

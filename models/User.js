@@ -19,6 +19,18 @@ const UserSchema = new Schema({
     type: String,
     required:true
   },
+  address: {
+    type: String,
+    required:true
+  },
+  suburb: {
+    type: String,
+    required:true
+  },
+  state1: {
+    type: String,
+    required:true
+  },
   date: {
     type: Date,
     default: Date.now

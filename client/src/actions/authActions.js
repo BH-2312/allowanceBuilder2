@@ -7,6 +7,7 @@ import {
   USER_LOADING
 } from "./types";
 
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
@@ -35,7 +36,21 @@ export const loginUser = (userData, history) => dispatch => {
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
-      history.push("/dashboard");
+      console.log(res.data)
+      console.log(userData)
+      console.log(history)
+      console.log(res.data.user.parentOrKid)
+      function userType(){
+        if (res.data.user.parentOrKid === "parent")
+        {
+          history.push("/dashboardParent");
+        }
+        else {
+          history.push("/dashboard");
+        }
+      }
+      userType();
+      // history.push("/dashboard");
     })
     .catch(err =>
       dispatch({

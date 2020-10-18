@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+const keys = require("../../../config/keys");
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
+const validateRegisterInput = require("../../../validation/register");
+const validateLoginInput = require("../../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
+const User = require("../../../models/User");
 
 // @route POST api/users/register
 // @desc Register user
@@ -33,6 +33,9 @@ router.post("/register", (req, res) => {
           email: req.body.email,
           password: req.body.password,
           parentOrKid: req.body.parentOrKid,
+          address: req.body.address,
+          suburb: req.body.suburb,
+          state1: req.body.state1
         });
 
   // Hash password before saving in database
@@ -79,7 +82,11 @@ router.post("/login", (req, res) => {
           // Create JWT Payload
           const payload = {
             id: user.id,
-            name: user.name
+            name: user.name,
+            parentOrKid:user.parentOrKid,
+            address:user.address,
+            suburb: user.suburb,
+            state1: user.state1
           };
 
   // Sign token
@@ -92,7 +99,8 @@ router.post("/login", (req, res) => {
             (err, token) => {
               res.json({
                 success: true,
-                token: "Bearer " + token
+                token: "Bearer " + token,
+                user: payload
               });
             }
           );

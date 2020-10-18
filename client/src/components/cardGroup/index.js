@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 // import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import RecipeReviewCard from "../card"
+import ParentCard from '../cardParent';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    paddingBottom: '0px'
+    paddingBottom: theme.spacing(8)
   },
 //   card: {
 //     height: '100%',
@@ -64,7 +63,7 @@ function Album() {
                     image="https://source.unsplash.com/random"
                     title="Image title"
                   /> */}
-                  <RecipeReviewCard/>
+                  <ParentCard/>
                   {/* <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Heading

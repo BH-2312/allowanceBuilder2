@@ -19,6 +19,9 @@ class Register extends Component {
       password: "",
       password2: "",
       parentOrKid: "parent",
+      address: "",
+      suburb: "",
+      state1: "",
       errors: {}
     };
     this.onChange = this.onChange.bind(this)
@@ -44,7 +47,7 @@ class Register extends Component {
   };
 
   handleChange = e => {
-    this.setState({parentOrKid:e.target.value})
+    this.setState({ parentOrKid: e.target.value })
   };
 
   onSubmit = e => {
@@ -54,7 +57,10 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2,
-      parentOrKid: this.state.parentOrKid
+      parentOrKid: this.state.parentOrKid,
+      address: this.state.address,
+      suburb: this.state.suburb,
+      state1: this.state.state1
     };
     console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
@@ -113,6 +119,48 @@ class Register extends Component {
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.address}
+                  error={errors.address}
+                  id="address"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.address
+                  })}
+                />
+                <label htmlFor="address">Address</label>
+                <span className="red-text">{errors.address}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.suburb}
+                  error={errors.suburb}
+                  id="suburb"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.suburb
+                  })}
+                />
+                <label htmlFor="suburb">Suburb</label>
+                <span className="red-text">{errors.suburb}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.state1}
+                  error={errors.state1}
+                  id="state1"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.state1
+                  })}
+                />
+                <label htmlFor="state1">State</label>
+                <span className="red-text">{errors.state1}</span>
               </div>
               <div className="input-field col s12">
                 <input

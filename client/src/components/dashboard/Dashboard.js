@@ -23,7 +23,13 @@ class Dashboard extends Component {
               <h4>
                 <b>Hey there,</b> {user.name.split(" ")[0]}
                 <p className="flow-text grey-text text-darken-1">
-                  You are logged into Allowance Builder!
+                  You are logged into Allowance Builder, you are a child!
+              </p>
+              <p className="flow-text grey-text text-darken-1">
+                  You are live at {user.address}, {user.suburb} 
+              </p>
+              <p className="flow-text grey-text text-darken-1">
+                 Lets make some pocket money!
               </p>
               </h4>
 
