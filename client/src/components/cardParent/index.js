@@ -15,10 +15,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
 // import toilet from '../../img/toilet.jpg';
 import AddJob from '../addJob';
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 500
+    
   },
   media: {
     height: 0,
@@ -53,25 +55,25 @@ function ParentCard(props) {
   };
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} id = "card">
       <CardMedia
         className={classes.media}
         image={props.image}
       />
       <CardContent className={classes.cardContent}>
         <Typography
-          variant="body2"
+          variant="h6"
           color="textSecondary"
-          component="p"
+          component="h5"
         >
           {props.room}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <Typography gutterBottom
-          variant="p"
+          variant="h6"
           color="textSecondary"
-          component="p">
+          component="h5">
           Add jobs!
         </Typography>
         <IconButton

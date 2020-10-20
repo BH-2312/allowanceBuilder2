@@ -13,11 +13,14 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
-import toilet from '../../img/toilet.jpg'
+// import toilet from '../../img/toilet.jpg';
+import SelectJob from '../selectJob';
+// import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 500
+    
   },
   media: {
     height: 0,
@@ -37,38 +40,41 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  cardContent: {
+    flexGrow: 1,
+  }
 }));
 
-function RecipeReviewCard() {
+function KidCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  // console.log(props)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} id = "card">
       <CardMedia
         className={classes.media}
-        // src = {toilet}
-        title="toilet"
-        image = {toilet}
+        image={props.image}
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Bathroom Jobs!
+      <CardContent className={classes.cardContent}>
+        <Typography
+          variant="h6"
+          color="textSecondary"
+          component="h5"
+        >
+          {props.room}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
-         <Typography variant="body2" color="textSecondary" component="p">
-          Add jobs!
+        <Typography gutterBottom
+          variant="h6"
+          color="textSecondary"
+          component="h5">
+          Select jobs!
         </Typography>
         <IconButton
           className={clsx(classes.expand, {
@@ -83,10 +89,11 @@ function RecipeReviewCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
+          <SelectJob />
         </CardContent>
       </Collapse>
     </Card>
   );
 }
 
-export default RecipeReviewCard
+export default KidCard

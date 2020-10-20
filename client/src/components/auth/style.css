@@ -1,8 +1,8 @@
 .container {
     background-repeat: no-repeat;
-    background-color: lightblue;
+    background-color: rgb(221, 247, 255);
     background-size: cover;
     background-position: center;
-    background-image: url("../../img/happy-cute-little-kid-boy.jpg");
+    /* background-image: url("../../img/houseBackground.jpg"); */
 
 }

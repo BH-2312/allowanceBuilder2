@@ -5,14 +5,13 @@ import API from "../../utils/API"
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
 import { List, ListItem } from "../List";
-import { Input, FormBtn } from "../Form";
+// import { Input, FormBtn } from "../Form";
 // import Job from "../../../../models/job";
 
-function AddJob(props) {
+function SelectJob() {
   // Setting our component's initial state
   const [jobs, setJobs] = useState([])
   const [formObject, setFormObject] = useState({})
-  console.log({...props})
 
   // Load all jobs and store them with setJobs
   useEffect(() => {
@@ -48,8 +47,7 @@ function AddJob(props) {
     if (formObject.job && formObject.price) {
       API.saveJob({
         job: formObject.job,
-        price: formObject.price,
-        // room: props.room
+        price: formObject.price
       })
         .then(res => loadJobs())
         .catch(err => console.log(err));
@@ -60,28 +58,8 @@ function AddJob(props) {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <form>
-              <Input
-                onChange={handleInputChange}
-                name="job"
-                placeholder="Job"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="price"
-                placeholder="Price"
-              />
-              <FormBtn
-                disabled={!(formObject.job && formObject.price)}
-                onClick={handleFormSubmit}
-              >
-                Add job
-              </FormBtn>
-            </form>
           </Col>
-          </Row>
-          <Row>
-          <Col size="md-6">
+          <Col size="md-6 sm-12">
             {/* <Jumbotron>
               <h1>Jobs On My List</h1>
             </Jumbotron> */}
@@ -90,7 +68,6 @@ function AddJob(props) {
                 {jobs.map(job => (
                   <ListItem key={job._id}>
                     <Link to={"/jobs/" + job._id}>
-
                       <strong>
                         {job.job} for ${job.price}
                       </strong>
@@ -109,4 +86,4 @@ function AddJob(props) {
   }
 
 
-export default AddJob;
+export default SelectJob;

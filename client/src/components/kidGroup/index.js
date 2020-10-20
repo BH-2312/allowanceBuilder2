@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import ParentCard from '../cardParent';
+import KidCard from '../card';
 import jobs from '../../jobs.json'
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +47,7 @@ function Album() {
                <Grid item xs={4}>
                {/* <Paper className={classes.paper}>xs=12</Paper> */}
              
-              <ParentCard
+              <KidCard
                 className={classes.card}
                 id={job.id}
                 key={job.id}

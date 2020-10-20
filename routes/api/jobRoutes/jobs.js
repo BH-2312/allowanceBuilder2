@@ -9,7 +9,7 @@ router.route("/")
 // Matches with "/api/jobs/:id"
 router
   .route("/:id")
-  // .get(jobsController.findById)
+  .get(jobsController.findById)
   .put(jobsController.update)
   .delete(jobsController.remove);
 

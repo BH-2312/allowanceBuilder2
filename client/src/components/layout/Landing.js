@@ -4,12 +4,13 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import "./style.css";
-
+import Typography from '@material-ui/core/Typography';
 
 class Landing extends Component {
   render() {
 
     return (
+      <React.Fragment>
       <Grid container component="main">
         <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className="bigPic"/>
@@ -58,6 +59,13 @@ class Landing extends Component {
         </div>
         </Grid>
        </Grid>
+             <footer>
+               <Typography></Typography>
+             <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+               Created by Ben Hilliard
+             </Typography>
+           </footer>
+           </React.Fragment>
     );
   }
 }

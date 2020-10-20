@@ -13,8 +13,9 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">attach_money</i>
-              Allowance Builder!
+              {/* <i className="material-icons">attach_money</i>
+              Allowance Builder! */}
+              <a href="/"><img src="https://images.cooltext.com/5473681.png" width="865" height="107" alt="allowance builder" /></a>
             </Link>
           </div>
         </nav>
