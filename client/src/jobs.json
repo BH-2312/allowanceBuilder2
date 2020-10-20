@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "room": "bathroom",
+      "image": "https://media1.tenor.com/images/229a1c2ef6faed93e8ea33a6da5c4dda/tenor.gif?itemid=15146520"
+    },
+    {
+      "id": 2,
+      "room": "garage",
+      "image": "https://media0.giphy.com/media/xECMdoosflok/giphy.gif"
+    },
+    {
+      "id": 3,
+      "room": "front yard",
+      "image": "https://thumbs.gfycat.com/JampackedParallelCarp-max-1mb.gif"
+    },
+    {
+      "id": 4,
+      "room": "bedroom",
+      "image": "https://media1.tenor.com/images/2b5eeff915693ebc2bacc99b122fbad2/tenor.gif?itemid=16786796"
+    },
+    {
+      "id": 5,
+      "room": "kitchen",
+      "image": "https://i.pinimg.com/originals/50/de/02/50de0217fc1156658f9f8fa1e91ec327.gif"
+    },
+    {
+      "id": 6,
+      "room": "lounge",
+      "image": "https://media4.giphy.com/media/l3q2Sk2utOO4w600M/source.gif"
+    },
+    {
+      "id": 7,
+      "room": "back yard",
+      "image": "https://media2.giphy.com/media/gw3woz6oWXK48iE8/giphy.gif"
+    },
+    {
+      "id": 8,
+      "room": "laundry",
+      "image": "https://media3.giphy.com/media/l2QZUkF4YilI5fO6I/source.gif"
+    },
+    {
+      "id": 9,
+      "room": "whole house",
+      "image": "https://media1.giphy.com/media/UPwElWTjo7Bf8SJNFm/source.gif"
+    }
+  ]
