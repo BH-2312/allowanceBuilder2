@@ -48,7 +48,7 @@ class Dashboard extends Component {
                   letterSpacing: "1.5px"
                 }}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              userId = {this.props.user.id}
+              userId = {user.id}
               >
                 Go To Bank $$
               </Link>

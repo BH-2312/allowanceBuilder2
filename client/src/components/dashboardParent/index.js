@@ -25,7 +25,7 @@ class DashboardParent extends Component {
               <h4>
                 <b>Hey there,</b> {user.name.split(" ")[0]}
                 <p className="flow-text grey-text text-darken-1">
-                  You are logged into Allowance Builder, you are a parent!
+                  Lets get those kids doing some jobs!
               </p>
               </h4>
               <Link

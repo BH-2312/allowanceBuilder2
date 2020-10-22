@@ -11,12 +11,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
+import CompletedBtn from "../completedBtn";
 
 function Bank(props) {
   // Setting our component's initial state
   const [jobs, setJobs] = useState([])
   const [formObject, setFormObject] = useState({})
-  console.log(props)
+  // const [checked, setChecked] = React.useState(true);
+ 
   // Load all jobs and store them with setJobs
   useEffect(() => {
     loadJobs()
@@ -31,12 +33,18 @@ function Bank(props) {
       .catch(err => console.log(err));
   };
   // choose a job from the database with a given id, then reloads jobs from the db
+
   function completedJob(job) {
-    job.checked = props.checked
+    // job.completed = props.completed
+    job.completed = true
     API.completedJob(job)
       .then(res => loadJobs())
       .catch(err => console.log(err));
   }
+
+  // const handleChange = (event) => {
+  //   setChecked(event.target.checked);
+  // };
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -71,14 +79,11 @@ function Bank(props) {
                     ${job.price}
                   </TableCell>
                   <TableCell>
-                  <Checkbox
-                  checked={job.completed}
-                      onChange={completedJob}
-                      inputProps={{ 'aria-label': 'primary checkbox' }}
-                      />
+                  {JSON.stringify(job.completed)}
+                  <CompletedBtn onClick={() => completedJob(job)} />
                   </TableCell>
                   <TableCell>
-                      {JSON.stringify(job.completed)}
+                    {JSON.stringify(job.checked)}
                   </TableCell>
                 </TableRow>
               ) : (null)

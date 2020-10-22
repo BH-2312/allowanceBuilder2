@@ -94,10 +94,8 @@ function AddJob(props) {
               <TableHead>
                 <TableRow>
                 <TableCell>Job</TableCell>
-                  <TableCell >Room</TableCell>
                   <TableCell >Allowance</TableCell>
-                  <TableCell >Completed?</TableCell>
-                  <TableCell >Checked?</TableCell>
+                  <TableCell >Remove Job?</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -109,9 +107,6 @@ function AddJob(props) {
                     </TableCell>
                     <TableCell >
                       ${job.price}
-                    </TableCell>
-                    <TableCell >
-                      {JSON.stringify(job.completed)}
                     </TableCell>
                     <TableCell>
                       <DeleteBtn onClick={() => deleteJob(job._id)} />

@@ -10,14 +10,15 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import CheckedCheckbox from '../checkedCheckbox'
 
-
-
-function Bank(props) {
+function JobHistory(props) {
   // Setting our component's initial state
   const [jobs, setJobs] = useState([])
-  const [formObject, setFormObject] = useState({})
-  console.log(props)
+  const [checked, setChecked] = React.useState(true);
+  // const [formObject, setFormObject] = useState({})
+ 
+  // console.log(props)
   // Load all jobs and store them with setJobs
   useEffect(() => {
     loadJobs()
@@ -31,64 +32,70 @@ function Bank(props) {
       )
       .catch(err => console.log(err));
   };
-  // choose a job from the database with a given id, then reloads jobs from the db
-  function chooseJob(job) {
-    job.userId = props.userId
-    API.chooseJob(job)
-      .then(res => loadJobs())
-      .catch(err => console.log(err));
+  // // choose a job from the database with a given id, then reloads jobs from the db
+  // function chooseJob(job) {
+  //   job.userId = props.userId
+  //   API.chooseJob(job)
+  //     .then(res => loadJobs())
+  //     .catch(err => console.log(err));
+  // };
+
+  const handleChange = (event) => {
+    console.log(event.target)
+    setChecked(event.target.checked);
   }
 
   // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
+  // function handleInputChange(event) {
+  //   const { name, value } = event.target;
+  //   setFormObject({ ...formObject, [name]: value })
+  // };
 
   return (
     <Container fluid>
       <Row>
-          <TableContainer component={Paper}>
-            <Table aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Job</TableCell>
-                  <TableCell >Room</TableCell>
-                  <TableCell >Allowance</TableCell>
-                  <TableCell >Completed?</TableCell>
-                  <TableCell >Checked?</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {jobs.map((job =>
+        <TableContainer component={Paper}>
+          <Table aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Job</TableCell>
+                <TableCell >Room</TableCell>
+                <TableCell >Allowance</TableCell>
+                <TableCell >Completed?</TableCell>
+                <TableCell >Checked?</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {jobs.map((job =>
                 //  props.room === job.room ? 
                 //  (
-                  <TableRow key={job._id} >
-                    <TableCell component="th" scope="row">
-                      {job.job}
-                    </TableCell>
-                    <TableCell >
-                     {job.room}
-                    </TableCell>
-                    <TableCell >
+                <TableRow key={job._id} >
+                  <TableCell component="th" scope="row">
+                    {job.job}
+                  </TableCell>
+                  <TableCell >
+                    {job.room}
+                  </TableCell>
+                  <TableCell >
                     ${job.price}
-                    </TableCell>
-                    <TableCell>
+                  </TableCell>
+                  <TableCell>
                     {JSON.stringify(job.completed)}
-                    </TableCell>
-                    <TableCell>
-                    {JSON.stringify(job.checked)}
-                    </TableCell>
-                  </TableRow>
+                  </TableCell>
+                  <TableCell>
+                  {JSON.stringify(job.checked)}
+                   <CheckedCheckbox/>
+                  </TableCell>
+                </TableRow>
                 // ) : (null)
                 //   {/* // )
                 // )} */}
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Row>
-        <Link
+      <Link
         to="/dashboardParent"
         style={{
           width: "250px",
@@ -103,4 +110,4 @@ function Bank(props) {
   );
 }
 
-export default Bank;
+export default JobHistory;

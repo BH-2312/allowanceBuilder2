@@ -27,6 +27,7 @@ export default {
   },
   //kid completes job
   completedJob: function (job) {
+    console.log("completed job is working")
     return axios.put("/api/jobRoutes/jobs/" + job._id, job);
   },
   //parent checks job
