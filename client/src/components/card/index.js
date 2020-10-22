@@ -89,7 +89,7 @@ function KidCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <SelectJob />
+          <SelectJob room = {props.room}/>
         </CardContent>
       </Collapse>
     </Card>

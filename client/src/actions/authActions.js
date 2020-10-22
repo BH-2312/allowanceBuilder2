@@ -84,3 +84,13 @@ export const logoutUser = () => dispatch => {
   // Set current user to empty object {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };
+
+// // kid goes to bank
+// export const goToBank = () => dispatch => {
+//   // Remove token from local storage
+//   localStorage.removeItem("jwtToken");
+//   // Remove auth header for future requests
+//   setAuthToken(false);
+//   // Set current user to empty object {} which will set isAuthenticated to false
+//   dispatch(setCurrentUser({}));
+// };

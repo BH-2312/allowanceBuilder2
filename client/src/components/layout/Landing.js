@@ -14,8 +14,8 @@ class Landing extends Component {
       <Grid container component="main">
         <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className="bigPic"/>
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div style={{ height: "75vh"}} className="container valign-wrapper" >
+      <Grid item xs={12} sm={10} md={5} component={Paper} elevation={6} >
+        <div  className="container valign-wrapper" >
           <div className="row">
             <div className="col s12 center-align">
               <h4>
@@ -59,8 +59,7 @@ class Landing extends Component {
         </div>
         </Grid>
        </Grid>
-             <footer>
-               <Typography></Typography>
+             <footer className = "footer">
              <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
                Created by Ben Hilliard
              </Typography>

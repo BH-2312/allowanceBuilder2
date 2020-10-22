@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Album from "../kidGroup"
+import "./style.css";
+import { Link } from "react-router-dom";
+
 
 class Dashboard extends Component {
 
@@ -12,16 +15,22 @@ class Dashboard extends Component {
     console.log("user logged out")
   };
 
+  // onBankClick = e => {
+  //   e.preventDefault();
+  //   this.props.goToBank();
+  //   console.log("kid gone to bank")
+  // };
+
   render() {
     const { user } = this.props.auth;
 
     return (
       <>
-        <div style={{ height: "25vh" }} className="container valign-wrapper">
+        <div style={{ height: "auto" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">
               <h4>
-                <b>Hey there,</b> {user.name.split(" ")[0]}
+                <b>Hey there, {user.name.split(" ")[0]}</b> 
                 <p className="flow-text grey-text text-darken-1">
                   You are logged into Allowance Builder, you are a child!
               </p>
@@ -32,7 +41,17 @@ class Dashboard extends Component {
                  Lets make some pocket money!
               </p>
               </h4>
-
+              <Link
+                  to="/bank"
+                  style={{
+                    width: "250px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px"
+                  }}
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Go To Bank $$
+              </Link>
             </div>
           </div>
         </div>

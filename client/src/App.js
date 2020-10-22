@@ -12,6 +12,9 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import DashboardParent from "./components/dashboardParent";
+import Bank from "./components/bank";
+import JobHistory from "./components/jobHistory";
+
 import "./App.css";
 
 // Check for token to keep user logged in
@@ -46,6 +49,8 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/dashboardParent" component={DashboardParent} />
+              <PrivateRoute exact path="/bank" component={Bank} />
+              <PrivateRoute exact path="/jobHistory" component={JobHistory} />
             </Switch>
           </div>
         </Router>

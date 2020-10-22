@@ -89,7 +89,7 @@ function ParentCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <AddJob />
+          <AddJob room = {props.room} />
         </CardContent>
       </Collapse>
     </Card>

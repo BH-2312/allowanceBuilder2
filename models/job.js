@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 const jobSchema = new Schema({
   job: { type: String, required: true },
   price: { type: Number, required: true },
-  completed:{type:Boolean, required:true, default:false},
-  room: { type: String, required: true },
+  completed:{type:Boolean, default:false, required: true  },
+  checked: {type:Boolean, default:false, required: true },
+  room: { type: String },
+  user: { type: String },
   date: { type: Date, default: Date.now }
 });
 
