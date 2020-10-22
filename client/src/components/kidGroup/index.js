@@ -33,8 +33,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Album() {
+function Album(props) {
   const classes = useStyles();
+  // console.log(props)
 
   return (
     <React.Fragment>
@@ -53,6 +54,7 @@ function Album() {
                 key={job.id}
                 room={job.room}
                 image={job.image}
+                userId = {props.userId}
               />
               </Grid>
             ))}

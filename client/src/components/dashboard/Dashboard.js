@@ -55,7 +55,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-        <Album />
+        <Album userId = {user.id}/>
         <div className="col s12 center-align">
         <button
                 style={{

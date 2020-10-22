@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Album from "../cardGroup"
+import { USER_LOADING } from "../../actions/types";
 
 class DashboardParent extends Component {
 
@@ -14,7 +15,7 @@ class DashboardParent extends Component {
 
   render() {
     const { user } = this.props.auth;
-
+// console.log({user})
     return (
       <>
         <div style={{ height: "25vh" }} className="container valign-wrapper">
@@ -30,7 +31,7 @@ class DashboardParent extends Component {
             </div>
           </div>
         </div>
-        <Album />
+        <Album userId = {user.id}/>
         <div className="col s12 center-align">
         <button
                 style={{

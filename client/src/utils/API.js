@@ -21,7 +21,7 @@ export default {
     return axios.post("/api/jobRoutes/jobs", jobData);
   },
   //Adds user to the job
-  chooseJob:function(id) {
-    return axios.put("/api/jobRoutes/jobs"+ id);
+  chooseJob: function(id) {
+    return axios.put("/api/jobRoutes/jobs/" + id);
   },
 };

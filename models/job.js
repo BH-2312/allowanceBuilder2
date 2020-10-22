@@ -7,7 +7,7 @@ const jobSchema = new Schema({
   completed:{type:Boolean, default:false, required: true  },
   checked: {type:Boolean, default:false, required: true },
   room: { type: String },
-  user: { type: String },
+  userId: { type: String, default:"not assigned" },
   date: { type: Date, default: Date.now }
 });
 

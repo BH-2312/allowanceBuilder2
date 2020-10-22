@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Album() {
+function Album(props) {
   const classes = useStyles();
 
   return (
@@ -53,6 +53,7 @@ function Album() {
                 key={job.id}
                 room={job.room}
                 image={job.image}
+                userId = {props.userId}
               />
               </Grid>
             ))}

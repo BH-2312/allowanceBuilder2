@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 function ParentCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  // console.log(props)
+  // console.log(props);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -89,7 +89,9 @@ function ParentCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <AddJob room = {props.room} />
+          <AddJob 
+          room = {props.room} 
+          userId = {props.userId} />
         </CardContent>
       </Collapse>
     </Card>

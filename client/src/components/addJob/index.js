@@ -20,7 +20,7 @@ function AddJob(props) {
   const [jobs, setJobs] = useState([])
   const [formObject, setFormObject] = useState({})
   // console.log({...props})
-
+// console.log(props)
   // Load all jobs and store them with setJobs
   useEffect(() => {
     loadJobs()
@@ -56,7 +56,7 @@ function AddJob(props) {
       API.saveJob({
         job: formObject.job,
         price: formObject.price,
-        room: props.room
+        room: props.room,
       })
         .then(res => loadJobs())
         .catch(err => console.log(err));

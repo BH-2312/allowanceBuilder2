@@ -1,5 +1,6 @@
 const db = require("../models");
 
+
 // Defining methods for the jobsController
 module.exports = {
   findAll: function(req, res) {
@@ -15,15 +16,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    console.log(req.body)
+  create: function(req, res) { 
     db.Job
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+      console.log(req.body)
   },
   update: function(req, res) {
-    console.log(req.body)
     db.Job
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))

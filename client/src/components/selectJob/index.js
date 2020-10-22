@@ -15,11 +15,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+
+
 function SelectJob(props) {
   // Setting our component's initial state
   const [jobs, setJobs] = useState([])
   const [formObject, setFormObject] = useState({})
-
+  console.log(props)
   // Load all jobs and store them with setJobs
   useEffect(() => {
     loadJobs()
@@ -39,6 +41,7 @@ function SelectJob(props) {
       job: formObject.job,
       price: formObject.price,
       room: props.room,
+      userId: props.userId
     })
       .then(res => loadJobs())
       .catch(err => console.log(err));
