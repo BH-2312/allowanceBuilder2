@@ -45,7 +45,7 @@ function Album(props) {
           {/* End hero unit */}
           <Grid container spacing={4} item xs={12}>
             {jobs.map(job => (
-               <Grid item xs={4}>
+               <Grid item xs={4} key = {job.id}>
                {/* <Paper className={classes.paper}>xs=12</Paper> */}
              
               <KidCard

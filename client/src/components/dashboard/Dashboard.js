@@ -6,7 +6,6 @@ import Album from "../kidGroup"
 import "./style.css";
 import { Link } from "react-router-dom";
 
-
 class Dashboard extends Component {
 
   onLogoutClick = e => {
@@ -23,55 +22,56 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
-
+    console.log(this.props)
     return (
       <>
         <div style={{ height: "auto" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">
               <h4>
-                <b>Hey there, {user.name.split(" ")[0]}</b> 
+                <b>Hey there, {user.name.split(" ")[0]}</b>
                 <p className="flow-text grey-text text-darken-1">
                   You are logged into Allowance Builder, you are a child!
               </p>
-              <p className="flow-text grey-text text-darken-1">
-                  You are live at {user.address}, {user.suburb} 
-              </p>
-              <p className="flow-text grey-text text-darken-1">
-                 Lets make some pocket money!
+                <p className="flow-text grey-text text-darken-1">
+                  You are live at {user.address}, {user.suburb}
+                </p>
+                <p className="flow-text grey-text text-darken-1">
+                  Lets make some pocket money!
               </p>
               </h4>
               <Link
-                  to="/bank"
-                  style={{
-                    width: "250px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px"
-                  }}
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Go To Bank $$
+                to="/bank"
+                style={{
+                  width: "250px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              userId = {this.props.user.id}
+              >
+                Go To Bank $$
               </Link>
             </div>
           </div>
         </div>
-        <Album userId = {user.id}/>
+        <Album userId={user.id} />
         <div className="col s12 center-align">
-        <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem",
-                  marginBottom: "1rem"
-                }}
+          <button
+            style={{
+              width: "150px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginTop: "1rem",
+              marginBottom: "1rem"
+            }}
 
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                Logout
+            onClick={this.onLogoutClick}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+          >
+            Logout
             </button>
-            </div>
+        </div>
       </>
     );
   }

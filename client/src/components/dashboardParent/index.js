@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Album from "../cardGroup"
 import { USER_LOADING } from "../../actions/types";
+import { Link } from "react-router-dom";
 
 class DashboardParent extends Component {
 
@@ -27,7 +28,18 @@ class DashboardParent extends Component {
                   You are logged into Allowance Builder, you are a parent!
               </p>
               </h4>
+              <Link
+                  to="/jobHistory"
+                  style={{
+                    width: "400px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px"
+                  }}
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
 
+                >
+                  Check the Job History
+              </Link>
             </div>
           </div>
         </div>

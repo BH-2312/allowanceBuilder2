@@ -93,10 +93,11 @@ function AddJob(props) {
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell>Job</TableCell>
+                <TableCell>Job</TableCell>
+                  <TableCell >Room</TableCell>
                   <TableCell >Allowance</TableCell>
-                  <TableCell >Completed</TableCell>
-                  <TableCell >Delete?</TableCell>
+                  <TableCell >Completed?</TableCell>
+                  <TableCell >Checked?</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

@@ -36,13 +36,9 @@ function SelectJob(props) {
       .catch(err => console.log(err));
   };
   // choose a job from the database with a given id, then reloads jobs from the db
-  function chooseJob(id) {
-    API.chooseJob({
-      job: formObject.job,
-      price: formObject.price,
-      room: props.room,
-      userId: props.userId
-    })
+  function chooseJob(job) {
+    job.userId = props.userId
+    API.chooseJob(job)
       .then(res => loadJobs())
       .catch(err => console.log(err));
   }
@@ -55,17 +51,17 @@ function SelectJob(props) {
 
   // When the form is submitted, use the API.saveJob method to save the job data
   // Then reload books from the database
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.job && formObject.price) {
-      API.saveJob({
-        job: formObject.job,
-        price: formObject.price
-      })
-        .then(res => loadJobs())
-        .catch(err => console.log(err));
-    }
-  };
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   if (formObject.job && formObject.price) {
+  //     API.saveJob({
+  //       job: formObject.job,
+  //       price: formObject.price
+  //     })
+  //       .then(res => loadJobs())
+  //       .catch(err => console.log(err));
+  //   }
+  // };
 
   return (
     <Container fluid>
@@ -100,7 +96,7 @@ function SelectJob(props) {
                       {JSON.stringify(job.completed)}
                     </TableCell>
                     <TableCell>
-                      <ChooseBtn onClick={() => chooseJob(job._id)} />
+                      <ChooseBtn onClick={() => chooseJob(job)} />
                     </TableCell>
                   </TableRow>
                 ) : (null)
