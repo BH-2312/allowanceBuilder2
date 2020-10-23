@@ -12,6 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import CheckedCheckbox from '../checkedCheckbox';
 import "./style.css";
+import CheckedBtn from "../checkedBtn";
 
 function JobHistory(props) {
   // Setting our component's initial state
@@ -40,6 +41,15 @@ function JobHistory(props) {
   //     .then(res => loadJobs())
   //     .catch(err => console.log(err));
   // };
+
+  function checkedJob(job) {
+    // job.completed = props.completed
+    job.checked = true
+    API.completedJob(job)
+      .then(res => loadJobs())
+      .catch(err => console.log(err));
+  }
+
 
   const handleChange = (event) => {
     console.log(event.target)
@@ -84,8 +94,8 @@ function JobHistory(props) {
                     {JSON.stringify(job.completed)}
                   </TableCell>
                   <TableCell>
-                  {JSON.stringify(job.checked)}
-                   <CheckedCheckbox/>
+                  {job.checked !== true ? (<CheckedBtn onClick={() => checkedJob(job)} />)
+                   :("Job checked")}
                   </TableCell>
                 </TableRow>
                 // ) : (null)

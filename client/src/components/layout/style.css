@@ -7,6 +7,7 @@
 }
 .navbar-fixed{
     min-height: 150px;
+    max-width: 100%;
     
 }
 .nav-wrapper{
@@ -21,4 +22,15 @@
   }
   .welcomeMessage{
     background-color: rgb(204, 227, 235); 
+  }
+  @media only screen and (max-width : 768px) {
+    .logo{
+        height: 100%;
+        width: 100%;
+    }
+    .navbar-fixed{
+        min-height: 100px;
+        max-width: 100%; 
+    }
+
   }

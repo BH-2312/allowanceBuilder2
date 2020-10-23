@@ -16,7 +16,7 @@ class Navbar extends Component {
             >
               {/* <i className="material-icons">attach_money</i>
               Allowance Builder! */}
-              <a href="/"><img src="https://images.cooltext.com/5473681.png" width="865" height="107" alt="allowance builder" /></a>
+              <a href="/"><img src="https://images.cooltext.com/5473681.png" width="865" height="107" alt="allowance builder" className = "logo"/></a>
             </Link>
           </div>
         </nav>

@@ -41,11 +41,11 @@ function Album(props) {
     <React.Fragment>
       <CssBaseline />
       <main>
-        <Container className={classes.cardGrid} maxWidth="lg" spacing={6}>
+        <Container className={classes.cardGrid} maxWidth="lg" spacing={6} >
           {/* End hero unit */}
-          <Grid container spacing={4} item xs={12}>
+          <Grid container spacing={4} item xs={12} >
             {jobs.map(job => (
-               <Grid item xs={4} key = {job.id}>
+               <Grid item xs={4} key = {job.id} className = "grid">
                {/* <Paper className={classes.paper}>xs=12</Paper> */}
              
               <KidCard

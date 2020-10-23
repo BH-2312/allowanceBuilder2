@@ -15,6 +15,7 @@ import DashboardParent from "./components/dashboardParent";
 import Bank from "./components/bank";
 import JobHistory from "./components/jobHistory";
 import "./App.css";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -35,6 +36,7 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
   render() {
     return (

@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
 // import toilet from '../../img/toilet.jpg';
 import SelectJob from '../selectJob';
-// import "./style.css";
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {

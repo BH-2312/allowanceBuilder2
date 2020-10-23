@@ -9,10 +9,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
+// import Paper from '@material-ui/core/Paper';
+// import Checkbox from '@material-ui/core/Checkbox';
 import CompletedBtn from "../completedBtn";
 import "./style.css";
+var nodemailer = require('nodemailer');
 
 function Bank(props) {
   // Setting our component's initial state
@@ -20,6 +21,18 @@ function Bank(props) {
   const [formObject, setFormObject] = useState({})
   // const [checked, setChecked] = React.useState(true);
  
+  // let transporter = nodemailer.createTransport(transport[, defaults])
+
+  var message = {
+    from: "benhilliard23@hotmail.com",
+    to: "receiver@sender.com",
+    subject: "Message title",
+    text: "Plaintext version of the message",
+    html: "<p>HTML version of the message</p>"
+  };
+
+  console.log(props)
+
   // Load all jobs and store them with setJobs
   useEffect(() => {
     loadJobs()
@@ -80,8 +93,8 @@ function Bank(props) {
                     ${job.price}
                   </TableCell>
                   <TableCell>
-                  {JSON.stringify(job.completed)}
-                  <CompletedBtn onClick={() => completedJob(job)} />
+                  {job.completed !== true ? (<CompletedBtn onClick={() => completedJob(job)} />)
+                  :("Job done")}
                   </TableCell>
                   <TableCell>
                     {JSON.stringify(job.checked)}
