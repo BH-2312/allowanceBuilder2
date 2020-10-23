@@ -25,7 +25,7 @@ class Dashboard extends Component {
     console.log(this.props)
     return (
       <>
-        <div style={{ height: "auto" }} className="container valign-wrapper">
+        <div style={{ height: "40vh" }} className="container valign-wrapper">
           <div className="row">
             <div className="col s12 center-align">
               <h4>

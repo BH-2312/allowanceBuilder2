@@ -2,7 +2,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-image: url("../../img/happy-cute-little-kid-boy.jpg");
+    background-image: url("../../img/happy-cute-little-kid-boy-blue.jpg");
 
 }
 .navbar-fixed{
@@ -16,5 +16,9 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
+    height: 5.5rem;            /* Footer height */
+    background-color: rgb(204, 227, 235);
+  }
+  .welcomeMessage{
+    background-color: rgb(204, 227, 235); 
   }

@@ -10,7 +10,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import CheckedCheckbox from '../checkedCheckbox'
+import CheckedCheckbox from '../checkedCheckbox';
+import "./style.css";
 
 function JobHistory(props) {
   // Setting our component's initial state
@@ -54,7 +55,7 @@ function JobHistory(props) {
   return (
     <Container fluid>
       <Row>
-        <TableContainer component={Paper}>
+        <TableContainer className = "container">
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -95,6 +96,7 @@ function JobHistory(props) {
           </Table>
         </TableContainer>
       </Row>
+      <Container maxWidth="sm"> 
       <Link
         to="/dashboardParent"
         style={{
@@ -106,6 +108,7 @@ function JobHistory(props) {
       >
         Go To Dashboard
     </Link>
+    </Container>
     </Container>
   );
 }

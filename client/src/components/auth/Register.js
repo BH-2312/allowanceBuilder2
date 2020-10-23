@@ -87,7 +87,7 @@ class Register extends Component {
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <FormControl component="fieldset">
-                <FormLabel component="legend">Parent or Kid?</FormLabel>
+                <FormLabel component="legend">Are you a Parent or a Kid?</FormLabel>
                 <RadioGroup aria-label="parentOrKid" name="parentOrKid" value={this.state.parentOrKid} onChange={this.handleChange} row>
                   <FormControlLabel value="parent" control={<Radio />} label="Parent" />
                   <FormControlLabel value="kid" control={<Radio />} label="Kid" />

@@ -12,6 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import CompletedBtn from "../completedBtn";
+import "./style.css";
 
 function Bank(props) {
   // Setting our component's initial state
@@ -53,9 +54,9 @@ function Bank(props) {
   };
   // console.log(userId)
   return (
-    <Container fluid>
-      <Row>
-        <TableContainer component={Paper}>
+    <Container fluid >
+      <Row >
+        <TableContainer className = "container">
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -93,6 +94,7 @@ function Bank(props) {
           </Table>
         </TableContainer>
       </Row>
+      <Container maxWidth="sm"> 
       <Link
         to="/dashboard"
         style={{
@@ -104,6 +106,7 @@ function Bank(props) {
       >
         Go To Dashboard
     </Link>
+    </Container>
     </Container>
   );
 }

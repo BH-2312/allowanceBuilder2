@@ -14,7 +14,6 @@ import Dashboard from "./components/dashboard/Dashboard";
 import DashboardParent from "./components/dashboardParent";
 import Bank from "./components/bank";
 import JobHistory from "./components/jobHistory";
-
 import "./App.css";
 
 // Check for token to keep user logged in

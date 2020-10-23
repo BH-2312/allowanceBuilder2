@@ -11,10 +11,10 @@ class Landing extends Component {
 
     return (
       <React.Fragment>
-        <Grid container component="main">
+        <Grid container component="main" style={{ height: "75vh" }}>
           <CssBaseline />
           <Grid item xs={false} sm={4} md={7} className="bigPic" />
-          <Grid item xs={12} sm={10} md={5} component={Paper} elevation={6} >
+          <Grid item xs={12} sm={10} md={5} elevation={6} className = "welcomeMessage">
             <div className="container valign-wrapper" >
               <div className="row">
                 <div className="col s12 center-align">
