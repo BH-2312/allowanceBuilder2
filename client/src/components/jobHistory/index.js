@@ -69,11 +69,11 @@ function JobHistory(props) {
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Job</TableCell>
-                <TableCell >Room</TableCell>
-                <TableCell >Allowance</TableCell>
-                <TableCell >Completed?</TableCell>
-                <TableCell >Checked?</TableCell>
+                <TableCell><h4>Job</h4></TableCell>
+                <TableCell > <h4>Room</h4></TableCell>
+                <TableCell ><h4>Allowance</h4></TableCell>
+                <TableCell ><h4>Completed?</h4></TableCell>
+                <TableCell ><h4>Checked?</h4></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -82,20 +82,21 @@ function JobHistory(props) {
                 //  (
                 <TableRow key={job._id} >
                   <TableCell component="th" scope="row">
-                    {job.job}
+                   <b>{job.job}</b> 
                   </TableCell>
                   <TableCell >
-                    {job.room}
+                    <b>{job.room}</b>
                   </TableCell>
                   <TableCell >
-                    ${job.price}
+                   <b>${job.price}</b> 
                   </TableCell>
                   <TableCell>
-                    {JSON.stringify(job.completed)}
+                  {job.completed !== true ? (<b>Needs to be done</b>)
+                  :(<b>Ready to check</b>)}
                   </TableCell>
                   <TableCell>
                   {job.checked !== true ? (<CheckedBtn onClick={() => checkedJob(job)} />)
-                   :("Job checked")}
+                   :(<b>Job checked</b>)}
                   </TableCell>
                 </TableRow>
                 // ) : (null)

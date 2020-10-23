@@ -78,8 +78,8 @@ function SelectJob(props) {
                 <TableRow>
                   <TableCell>Job</TableCell>
                   <TableCell >Allowance</TableCell>
-                  <TableCell >Completed</TableCell>
-                  <TableCell >Choose</TableCell>
+                  <TableCell >Completed?</TableCell>
+                  <TableCell >Choose Job?</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -93,7 +93,8 @@ function SelectJob(props) {
                       ${job.price}
                     </TableCell>
                     <TableCell >
-                      {JSON.stringify(job.completed)}
+                    {job.completed !== true ? (<b>NO</b>)
+                  :("Done!")}
                     </TableCell>
                     <TableCell>
                       <ChooseBtn onClick={() => chooseJob(job)} />

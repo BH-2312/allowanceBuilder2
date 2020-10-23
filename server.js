@@ -6,7 +6,32 @@ const passport = require("passport");
 
 const users = require("./routes/api/userRoutes/users");
 const jobs = require("./routes/api/jobRoutes/jobs");
+// require ('dotenv').config();
+// var nodemailer = require('nodemailer');
 
+// let transporter = nodemailer.createTransport({
+//   service:'outlook',
+// auth:{
+//   user:process.env.EMAIL,
+//   pass: process.env.PASSWORD
+// }
+// })
+
+// let mailOptions = {
+//   from: 'benhilliard23@hotmail.com',
+//   to: 'benhilliard23@hotmail.com',
+//   subject: 'test',
+//   text: 'test works'
+// };
+
+// transporter.sendMail(mailOptions, function (err,data) {
+//   if (err){
+//     console.log('Error occurs');
+//   } else {
+//     console.log('Email sent')
+//   }
+  
+// })
 
 // Bodyparser middleware
 app.use(

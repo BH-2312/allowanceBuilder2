@@ -7,8 +7,8 @@ import Button from '@material-ui/core/Button';
 function ChooseBtn(props) {
 
   return (
-    <span className="chooseBtn" {...props} role="button" tabIndex="0">
-       <Button variant="contained"color="primary">
+    <span  {...props} role="button" tabIndex="0">
+       <Button variant="contained"color="primary" className="chooseBtn" size="small">
         Choose
       </Button>
     </span>

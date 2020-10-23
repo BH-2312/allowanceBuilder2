@@ -19,13 +19,13 @@ class Landing extends Component {
               <div className="row">
                 <div className="col s12 center-align">
                   <h4>
-                    Kids! do you want make some pocket money?
+                    Kids! Do you want make some pocket money?
             </h4>
                   <h4>
-                    Parents! do you need to get some jobs done?
+                    Parents! Do you need to get some jobs done?
             </h4>
                   <h4>
-                    Welcome to allowance builder!
+                    Welcome to Allowance Builder!
             </h4>
                   <br />
                   <div className="col s6">

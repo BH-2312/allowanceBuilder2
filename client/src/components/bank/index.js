@@ -13,23 +13,38 @@ import TableRow from '@material-ui/core/TableRow';
 // import Checkbox from '@material-ui/core/Checkbox';
 import CompletedBtn from "../completedBtn";
 import "./style.css";
-var nodemailer = require('nodemailer');
+// var nodemailer = require('nodemailer');
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
 function Bank(props) {
   // Setting our component's initial state
   const [jobs, setJobs] = useState([])
   const [formObject, setFormObject] = useState({})
   // const [checked, setChecked] = React.useState(true);
- 
-  // let transporter = nodemailer.createTransport(transport[, defaults])
 
-  var message = {
-    from: "benhilliard23@hotmail.com",
-    to: "receiver@sender.com",
-    subject: "Message title",
-    text: "Plaintext version of the message",
-    html: "<p>HTML version of the message</p>"
-  };
+  const classes = useStyles();
+
+//   transporter.verify(function(error, success) {
+//     if (error) {
+//          console.log(error);
+//     } else {
+//          console.log('Server is ready to take our messages');
+//     }
+//  });
+
+  // var message = {
+  //   from: "benhilliard23@hotmail.com",
+  //   to: "receiver@sender.com",
+  //   subject: "Message title",
+  //   text: "Plaintext version of the message",
+  //   html: "<p>HTML version of the message</p>"
+  // };
 
   console.log(props)
 
@@ -37,6 +52,8 @@ function Bank(props) {
   useEffect(() => {
     loadJobs()
   }, [])
+
+
 
   // Loads all jobs and sets them to jobs
   function loadJobs() {
@@ -70,34 +87,35 @@ function Bank(props) {
     <Container fluid >
       <Row >
         <TableContainer className = "container">
-          <Table aria-label="simple table">
+          <Table aria-label="simple table" className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>Job</TableCell>
-                <TableCell >Room</TableCell>
-                <TableCell >Allowance</TableCell>
-                <TableCell >Completed?</TableCell>
-                <TableCell >Checked?</TableCell>
+                <TableCell><h4>Job</h4></TableCell>
+                <TableCell ><h4>Room</h4></TableCell>
+                <TableCell ><h4>Allowance</h4></TableCell>
+                <TableCell ><h4>Completed?</h4></TableCell>
+                <TableCell ><h4>Checked?</h4></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {jobs.map((job) => job.userId !== "not assigned" ? (
                 <TableRow key={job._id} >
                   <TableCell component="th" scope="row">
-                    {job.job}
+                  <b> {job.job}</b> 
                   </TableCell>
                   <TableCell >
-                    {job.room}
+                  <b>  {job.room}</b>
                   </TableCell>
                   <TableCell >
-                    ${job.price}
+                  <b>  ${job.price}</b>
                   </TableCell>
                   <TableCell>
                   {job.completed !== true ? (<CompletedBtn onClick={() => completedJob(job)} />)
-                  :("Job done")}
+                  :(<b> Job finished</b>)}
                   </TableCell>
                   <TableCell>
-                    {JSON.stringify(job.checked)}
+                  {job.checked !== true ? (<b>Not yet...</b>)
+                  :(<b>Well done!</b>)}
                   </TableCell>
                 </TableRow>
               ) : (null)
@@ -107,7 +125,7 @@ function Bank(props) {
           </Table>
         </TableContainer>
       </Row>
-      <Container maxWidth="sm"> 
+      <Container maxWidth="sm" justifyContent = "center"> 
       <Link
         to="/dashboard"
         style={{

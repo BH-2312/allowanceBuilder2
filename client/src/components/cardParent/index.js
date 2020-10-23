@@ -66,7 +66,7 @@ function ParentCard(props) {
           color="textSecondary"
           component="h5"
         >
-          {props.room}
+          <b>{props.room}</b>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -74,7 +74,7 @@ function ParentCard(props) {
           variant="h6"
           color="textSecondary"
           component="h5">
-          Add jobs!
+         <b> Add jobs!</b>
         </Typography>
         <IconButton
           className={clsx(classes.expand, {
