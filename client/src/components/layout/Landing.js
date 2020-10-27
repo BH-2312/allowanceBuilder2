@@ -60,9 +60,9 @@ class Landing extends Component {
           </Grid>
         </Grid>
         <footer className="footer">
-          <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          {/* <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
             Created by Ben Hilliard
-             </Typography>
+             </Typography> */}
         </footer>
       </React.Fragment>
     );
